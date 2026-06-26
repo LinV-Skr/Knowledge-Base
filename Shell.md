@@ -16,6 +16,12 @@ mdelete *
 rtpDelete <进程ID>
 ```
 
+2. VxWorks如何打印一次CPU占用率？
+
+```shell
+spyReport
+```
+
 # 3 SSH
 
 1. SSH - 将本地生成的`id_xx.pub`中的密钥拷贝至服务器后，如何验证`ssh`功能是否配置成功？
@@ -38,3 +44,15 @@ uname -m
 #x86 - 64位
 ```
 
+2. Linux Shell - 如何快速给文件添加执行权限？
+
+```shell
+chmod +x <filePath>
+```
+
+3. Linux Shell - `tar -zxvf`，每个字段的含义？
+
+* `-z`：通过gzip算法。
+* `-x`：解压（extract）。
+* `-v`：显示详细过程（verbose）。
+* `-f`：指定文件名（file）。
