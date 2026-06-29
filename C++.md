@@ -1,4 +1,4 @@
-# 1 内存相关
+# 1 内存
 
 1. C/C++ - 如何比较两块内存中内容是否相同？（头文件、函数原型、注意事项）
 
@@ -10,7 +10,7 @@ int memcmp(const void * ptr1, const void * ptr2, size_t num);
 
 ​	注意事项：**无法用于比较带填充的结构体**。对于实际值相同的两个结构体，填充部分垃圾值可能导致比较失败。
 
-# 2 字符串相关
+# 2 字符串
 
 1. C/C++ - 如何获取字符串中某个字符最后出现的位置？
 
@@ -39,3 +39,8 @@ size_type string:rfind(char c, size_type pos = npos) const noexcept;
 istringstream << data << "";
 ostringstream >> data;
 ```
+
+# 3 编译
+
+1. C/C++ - gcc/g++的编译流程是怎样的？
+1. C/C++ - g++和gcc的区别是什么？

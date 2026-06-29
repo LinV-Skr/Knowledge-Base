@@ -56,3 +56,39 @@ chmod +x <filePath>
 * `-x`：解压（extract）。
 * `-v`：显示详细过程（verbose）。
 * `-f`：指定文件名（file）。
+
+4. Linux Shell - 如何递归修改目录下所有文件的所有者？
+
+```shell
+chown -R 
+```
+
+5. Linux Shell - 如何增加系统用户？系统用户和普通用户的区别是什么？
+
+``` shell
+useradd --system <userName>
+```
+
+​	系统用户（UID<1000）主要用于运行后台服务。不会出现在登录界面的欢迎列表中，也没有密码过期的问题。
+
+6. Linux Shell - 新增用户时，如何指定交互式响应shell？
+
+```shell
+useradd --shell /bin/bash <userName> 
+```
+
+7. Linux Shell - 新增用户时，如何指定并创建用户目录？
+
+```shell
+useradd --create-home --home-dir <filePath> <userName>
+```
+8. Linux Shell - `echo`的作用是什么？
+
+​	将指定的文本或者变量值输出在终端上。
+
+```shell
+# 查看变量值
+my_var="Hello World"
+echo $my_var
+```
+
