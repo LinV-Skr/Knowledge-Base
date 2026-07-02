@@ -46,3 +46,16 @@ qobject_cast<<发送者类型>*>(sender());
 
 1. Qt - QProgressDialog，`setWindowTitle`、`setWindowIcon`未生效，该如何解决？
 
+# 3 位置
+
+1. Qt - 如何获取当前窗口的中心位置？
+
+```c++
+QPoint center = this->window()->geometry().center();
+```
+
+# 4 继承关系
+
+1. Qt - QWidget、QMainWindow、QDialog之间的继承关系是怎样的？
+
+<img src="..\KnowledgeBase\Img\Qt继承关系.png" style="zoom:33%;" />

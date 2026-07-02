@@ -95,3 +95,15 @@ echo $my_var
 9. Linux Shell - `source ~/.bashrc`的作用是什么？
 
 ​	在当前终端会话中，立即执行一遍`.bashrc`文件里的所有命令，让修改后的配置即时生效。
+
+10. Linux Shell - 如何查看服务日志？（以`gitea`举例说明）
+
+```shell
+journalctl -u gitea -n 50 --no-paper
+```
+
+​	`journalctl`，全称Journal Control（日志控制工具），是`systemd`自带的一个日志查看命令，用户查询和管理`systemd`的日志系统（即`Journal`）。
+
+* `-u`，过滤单元（Unit）。
+* `-n`，限制次数（Number）。
+* `--no-paper`，禁用分页器。
