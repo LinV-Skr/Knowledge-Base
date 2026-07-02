@@ -42,3 +42,7 @@ QTime QTime::addSecs(int secs) const;
 qobject_cast<<发送者类型>*>(sender());
 ```
 
+# 2 QDialog
+
+1. Qt - QProgressDialog，`setWindowTitle`、`setWindowIcon`未生效，该如何解决？
+

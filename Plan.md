@@ -14,11 +14,12 @@
 
 * 洗差旅收纳袋
 * 洗餐具
+* 洗澡
 
 # 3 Daily Plan
 
-* FocusOn 2，21:20 - 22:00
+* FocusOn 2，22:00 - 22:40
+  * Anki 10，
+* FocusOn 1，20:20 -> 21:00
   * 每日工作总结
-  * Anki 10，42 -> 31，Done
-* FocusOn 1，20:00 - 20:40
-  * Anki 10，42 -> 32
+  * Anki 10，39 -> 29，Done

@@ -92,3 +92,6 @@ my_var="Hello World"
 echo $my_var
 ```
 
+9. Linux Shell - `source ~/.bashrc`的作用是什么？
+
+​	在当前终端会话中，立即执行一遍`.bashrc`文件里的所有命令，让修改后的配置即时生效。
