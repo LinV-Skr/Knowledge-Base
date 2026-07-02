@@ -58,4 +58,4 @@ QPoint center = this->window()->geometry().center();
 
 1. Qt - QWidget、QMainWindow、QDialog之间的继承关系是怎样的？
 
-<img src="..\KnowledgeBase\Img\Qt继承关系.png" style="zoom:33%;" />
+<img src=".\Img\Qt继承关系.png" style="zoom:33%;" />
