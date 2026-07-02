@@ -46,6 +46,19 @@ qobject_cast<<发送者类型>*>(sender());
 
 1. Qt - QProgressDialog，`setWindowTitle`、`setWindowIcon`未生效，该如何解决？
 
+​	`QProgressDialog::setWindowTitle`、`QProgressDialog::setWindowIcon`设置生效需满足以下两个条件：
+
+* 父对象是顶层窗口。
+  * 顶层窗口为`QMainWindow`、`QDialog`或者父对象为NULL的`QWidget`；
+* 父对象未设置`FramelessWindowHint`；
+
+​	若不满足则无法生效，需将`QProgressDialog`父对象设置为NULL，才能生效。
+
+```c++
+QProgressDialog progressDialog(NULL);
+progressDialog.setAttribute(Qt::WA_DeleteOnClose);
+```
+
 # 3 位置
 
 1. Qt - 如何获取当前窗口的中心位置？
@@ -54,8 +67,59 @@ qobject_cast<<发送者类型>*>(sender());
 QPoint center = this->window()->geometry().center();
 ```
 
+2. Qt - `QProgressDialog`如何移动位置？
+
+```c++
+void QWidget::move(int x, int y);
+```
+
 # 4 继承关系
 
 1. Qt - QWidget、QMainWindow、QDialog之间的继承关系是怎样的？
 
 <img src=".\Img\Qt继承关系.png" style="zoom:33%;" />
+
+# 5 QTable
+
+1. Qt - `QAbstractTable`如何设置行标题？
+
+​	重写`QAbstractTableModel::headerData(int section, Qt::Orientation, int role)`，执行返回对应行列值。
+
+```c++
+QVariant MyTableModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+	// 只处理显示文本的角色
+    if(role == Qt::DisplayRole) 
+    {
+        // 判断请求的是行标题（垂直方向）还是列标题（水平方向）
+        if(orientation == Qt::Vertical)
+        {
+            // 返回你想要为这一行显示的文本
+            // section 参数就是行号，从 0 开始
+            return QString ("第 %1 行").arg(section + 1);
+        }
+        
+        // 如果是列标题，则调用父类默认行为或自定义处理
+        if(orientation == Qt::Horizontal)
+        {
+			// 例如，根据 section 返回不同的列标题
+            if(section == 0) return QString("列 A");
+            if(section == 1) return QString("列 B");
+            return QString("列 %1").arg(section + 1);
+        }
+    }
+    // 对于其他角色，返回空 QVariant
+    return QVariant();
+}
+```
+
+# 6 QWidget
+
+1. Qt - 如何设置窗口不显示外边框、标题栏？
+
+```c++
+#include<QWidget>
+void QWidget::setWindowFlags(Qt::WindowFlags type);
+//  Type取Qt::FramelessWindowHint
+```
+

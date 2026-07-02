@@ -34,6 +34,23 @@ ssh -T -i ~/.ssh/id_xxx.pub git@github.com
 * `-i`，全称`identity_file`，指定用于身份验证的私钥文件路径。
 * `-T`， 参数的作用是**禁用伪终端（Pseudo-terminal）的分配**。简单来说，它告诉 SSH 客户端：“**不要**为这次连接创建远程端的交互式命令行环境（Shell）”。
 
+2. SSH - 如何查看密钥中的指纹信息？
+
+```shell
+ssh-keygen -lf ~/.ssh/id_ed25519.pub
+```
+
+* `-l`：list，显示公钥的指纹信息；
+* `-f`：file，指定文件路径。
+
+3. SSH - 指纹信息的作用是什么？
+
+* 验证远程服务器身份（防范中间人攻击）；
+* 验证本地公私钥是否配对；
+  * `ssh-keygen -lf ~/.ssh/id_rsa`
+  * `ssh-keygen -lf ~/.ssh/id_rsa.pub`
+* 指纹更简洁，用于筛选用户对应的公钥。
+
 # 4 Linux Shell
 
 1. Linux Shell - 如何查看操作系统位数？
@@ -107,3 +124,20 @@ journalctl -u gitea -n 50 --no-paper
 * `-u`，过滤单元（Unit）。
 * `-n`，限制次数（Number）。
 * `--no-paper`，禁用分页器。
+
+11. Linux Shell - 如何实时跟踪显示文件末尾内容？
+
+```shell
+tail -f
+```
+
+* `-f`：follow，实时跟踪文件末尾新增内容。
+
+12. Linux Shell - 如何输出指令在`$PATH`对应的路径？
+
+```shell
+# which <指令名>
+which ssh-keygen
+#  输出/usr/bin/ssh-keygen
+```
+

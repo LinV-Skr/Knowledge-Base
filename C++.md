@@ -65,3 +65,21 @@ gcc -I <DirectoryPath>
 gcc -g
 ```
 
+5. C/C++ - g++/gcc编译时，如何指定一个宏？
+
+```shell
+gcc test.c -o test -DDEBUG
+```
+
+6. C/C++ - g++/gcc编译时，如何指定不生成任何警告？
+
+```shell
+gcc test.c -o test -w
+```
+
+7. C/C++ - g++/gcc编译时，如何指定生成所有警告信息？
+
+```shell
+gcc test.c -o test -Wall
+```
+
